@@ -17,9 +17,9 @@ variables:
   - name: location
     value: canadacentral
   - name: resource_group_name
-    value: terraform-chatgptdemo
+    value: rgmahmud255
   - name: storage_account_name
-    value: tfchatgptdemo
+    value: stgmahmud255
   - name: functionapp_storage_account_name
     value: rkfunctionappstor02
   - name: azurerm_windows_function_app_name
