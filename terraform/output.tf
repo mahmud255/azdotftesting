@@ -1,3 +1,3 @@
-output "functionapp.name"{
-    value   = "azurerm_windows_function_app.example.name"
+output "function_app_name" {
+  value = var.function_app_name
 }
