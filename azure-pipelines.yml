@@ -61,7 +61,17 @@ steps:
     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
     commandOptions: '-var "environment=$(environment)" -var "resource_group_name=$(resource_group_name)" -var "location=$(location)" -var "functionapp_storage_account_name=$(functionapp_storage_account_name)"  -var "azurerm_windows_function_app_name=$(azurerm_windows_function_app_name)" -auto-approve'
     environmentServiceNameAzureRM: 'azapp_service_connection'
-    
+
+#/*
+- task: TerraformTaskV1@0
+  displayName: 'Terraform Destroy'
+  inputs:
+    command: 'destroy'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
+    commandOptions: '-var "environment=$(environment)" -var "resource_group_name=$(resource_group_name)" -var "location=$(location)" -var "functionapp_storage_account_name=$(functionapp_storage_account_name)"  -var "azurerm_windows_function_app_name=$(azurerm_windows_function_app_name)" -auto-approve'
+    environmentServiceNameAzureRM: 'azapp_service_connection'   
+#*/
+
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
