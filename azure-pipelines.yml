@@ -27,7 +27,7 @@ variables:
 
 steps:
 - script: echo Hello, world!
-  displayName: 'Run a one-line script'
+  displayName: 'Script Testing'
 
 - task: TerraformInstaller@0
   displayName: 'Install Terraform'
