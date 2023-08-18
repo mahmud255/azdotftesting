@@ -15,7 +15,7 @@ variables:
   - name: environment
     value: dev
   - name: location
-    value: canadacentral
+    value: eastus
   - name: resource_group_name
     value: rgmahmud255
   - name: storage_account_name
@@ -47,7 +47,7 @@ steps:
     backendAzureRmKey: 'terraform.tfstate'
 
 - task: TerraformTaskV1@0
-  displayName: 'Run Terraform Plan'
+  displayName: 'Terraform Plan'
   inputs:
     command: 'plan'
     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
@@ -55,7 +55,7 @@ steps:
     environmentServiceNameAzureRM: 'azapp_service_connection'
 
 - task: TerraformTaskV1@0
-  displayName: 'Run Terraform Apply'
+  displayName: 'Terraform Apply'
   inputs:
     command: 'apply'
     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'

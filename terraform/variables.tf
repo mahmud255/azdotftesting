@@ -15,7 +15,7 @@ variable "resource_group_name" {
 
 variable "location" {
   type = string
-  default = "canada central"
+  default = "East US"
 }
 
 variable "functionapp_storage_account_name" {
