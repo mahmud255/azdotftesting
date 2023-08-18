@@ -40,9 +40,9 @@ steps:
     command: 'init'
     provider: 'azurerm'
     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
-    backendServiceArm: 'azdevopwithchatgpt_service_connection'
-    backendAzureRmResourceGroupName: 'terraform-chatgptdemo'
-    backendAzureRmStorageAccountName: 'tfchatgptdemo'
+    backendServiceArm: 'azapp_service_connection'
+    backendAzureRmResourceGroupName: 'rgmahmud255'
+    backendAzureRmStorageAccountName: 'stgmahmud255'
     backendAzureRmContainerName: 'terraform-state'
     backendAzureRmKey: 'terraform.tfstate'
 
@@ -52,7 +52,7 @@ steps:
     command: 'plan'
     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
     commandOptions: '-var "environment=$(environment)" -var "resource_group_name=$(resource_group_name)" -var "location=$(location)" -var "functionapp_storage_account_name=$(functionapp_storage_account_name)"  -var "azurerm_windows_function_app_name=$(azurerm_windows_function_app_name)" -input=false'
-    environmentServiceNameAzureRM: 'azdevopwithchatgpt_service_connection'
+    environmentServiceNameAzureRM: 'azapp_service_connection'
 
 - task: TerraformTaskV1@0
   displayName: 'Run Terraform Apply'
@@ -60,7 +60,7 @@ steps:
     command: 'apply'
     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
     commandOptions: '-var "environment=$(environment)" -var "resource_group_name=$(resource_group_name)" -var "location=$(location)" -var "functionapp_storage_account_name=$(functionapp_storage_account_name)"  -var "azurerm_windows_function_app_name=$(azurerm_windows_function_app_name)" -auto-approve'
-    environmentServiceNameAzureRM: 'azdevopwithchatgpt_service_connection'
+    environmentServiceNameAzureRM: 'azapp_service_connection'
     
 - script: |
     echo Add other tasks to build, test, and deploy your project.
