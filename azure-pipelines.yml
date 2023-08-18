@@ -23,7 +23,7 @@ variables:
   - name: functionapp_storage_account_name
     value: rkfunctionappstor02
   - name: azurerm_windows_function_app_name
-    value: rkfunctionapp02
+    value: azdevopsterraform
 
 steps:
 - script: echo Hello, world!
