@@ -21,7 +21,7 @@ variables:
   - name: storage_account_name
     value: stgmahmud255
   - name: functionapp_storage_account_name
-    value: rkfunctionappstor02
+    value: stgazdevopstf
   - name: azurerm_windows_function_app_name
     value: azdevopsterraform
 

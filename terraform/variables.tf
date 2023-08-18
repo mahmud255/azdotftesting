@@ -5,7 +5,7 @@ variable "function_app_name" {
 }
 
 
-variable "environment" {stgazdevopstf
+variable "environment" {
   type = string
 }
 
