@@ -1,7 +1,9 @@
 variable "function_app_name" {
   description = "Name of the function app"
   type        = string
+  default     = "default_function_app_name"
 }
+
 
 variable "environment" {
   type = string
