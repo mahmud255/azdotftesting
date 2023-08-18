@@ -13,7 +13,7 @@ resource "azurerm_storage_account" "example" {
 }
 
 resource "azurerm_service_plan" "example" {
-  name                = "rk-app-service-plan02"
+  name                = "rg-azdevopsterraform"
   resource_group_name = data.azurerm_resource_group.rg.name
   location            = var.location
   os_type             = "Windows"
