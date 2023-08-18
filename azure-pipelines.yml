@@ -1,0 +1,36 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo '##vso[task.prependpath]/usr/local/bin'
+    terraform --version
+  displayName: 'Install and Verify Terraform'
+
+- script: |
+    terraform init
+  displayName: 'Terraform Init'
+
+- script: |
+    terraform plan -out=tfplan -var="example_var=value"
+  displayName: 'Terraform Plan'
+
+- script: |
+    terraform apply -auto-approve tfplan
+  displayName: 'Terraform Apply'
+  
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
